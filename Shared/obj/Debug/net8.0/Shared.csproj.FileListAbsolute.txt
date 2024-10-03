@@ -1,0 +1,13 @@
+C:\lmsHexagonal\loggin\challenge02_b\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\lmsHexagonal\loggin\challenge02_b\Shared\bin\Debug\net8.0\Shared.dll
+C:\lmsHexagonal\loggin\challenge02_b\Shared\bin\Debug\net8.0\Shared.pdb
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\Shared.sourcelink.json
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\Shared.dll
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\Shared.pdb
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\lmsHexagonal\loggin\challenge02_b\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
