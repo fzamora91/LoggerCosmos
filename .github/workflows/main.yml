@@ -23,7 +23,7 @@ jobs:
           dotnet-version: '8.0.x'
           
       - name: Restore
-        run: dotnet restore ./lmschalenge01.sln
+        run: dotnet restore ./challenge02_b.sln
         
       - name: Build
         run: dotnet build ./challenge02_b.sln --configuration Release --no-restore
