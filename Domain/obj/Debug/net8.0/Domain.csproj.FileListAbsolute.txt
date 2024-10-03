@@ -1,0 +1,13 @@
+C:\lmsHexagonal\loggin\challenge02_b\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\lmsHexagonal\loggin\challenge02_b\Domain\bin\Debug\net8.0\Domain.dll
+C:\lmsHexagonal\loggin\challenge02_b\Domain\bin\Debug\net8.0\Domain.pdb
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\Domain.dll
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\Domain.pdb
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\lmsHexagonal\loggin\challenge02_b\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
