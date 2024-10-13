@@ -5,6 +5,8 @@ using Application.UseCases.Logs.Queries.GetLogs;
 using GetLogsByType = Application.UseCases.Logs.Queries.GetLogsByType;
 using Microsoft.AspNetCore.Mvc;
 using Application.UseCases.Logs.Queries.GetLogsByType;
+using Application.UseCases.Logs.Commands.Kafka;
+using Domain;
 
 namespace Challenge02a.Controllers
 {
@@ -53,6 +55,22 @@ namespace Challenge02a.Controllers
             var query = this.Mapper.Map<GetLogQueryByType>(model);
             var result = await this.Mediator.Send(query);
             return this.FromResult(result);
+        }
+
+
+        [HttpPost]
+        [Route("GetFromKafka")]
+        [Produces(typeof(CreateLogCommandDto))]
+        [ActionName(nameof(Create))]
+        public async Task<IActionResult> GetFromKafka()
+        {
+
+            var orderCommand = new OrderCommand();
+            // Configuramos el consumer y comenzamos a escuchar mensajes
+            IMessageReceiver<OrderCommand> messageReceiver = new KafkaMessageConsumer();
+            var r = messageReceiver.ReceiveMessageAsync(orderCommand);
+
+            return Ok(r.Result);
         }
 
     }

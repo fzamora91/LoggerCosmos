@@ -1,0 +1,18 @@
+# Este script crea un recurso de Azure Arc para conectar un clúster de Kubernetes a Azure
+# Documentación: https://aka.ms/AzureArcK8sDocs
+
+# Iniciar sesión en Azure
+az login --use-device-code
+
+# Establecer una suscripción de Azure
+az account set --subscription "d0dbf302-3812-4ae4-a40b-998322d1a057"
+
+# Crear un clúster conectado
+az connectedk8s connect --name "retoaks3" --resource-group "lmsListaTareas" --location "centralus" --correlation-id "c18ab9d0-685e-48e7-ab55-12588447b0ed" --tags "Datacenter City StateOrDistrict CountryOrRegion"
+
+
+
+
+az aks create --resource-group 'lmsListaTareas' --name 'aks002' --node-count 1 --enable-addons monitoring   --generate-ssh-keys --attach-acr 'reto2record'
+
+az aks create --resource-group 'aks_gr' --name 'aks002' --node-count 1 --enable-addons monitoring   --generate-ssh-keys --attach-acr 'reto2record'

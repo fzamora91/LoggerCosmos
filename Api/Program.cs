@@ -2,35 +2,38 @@ using Application;
 using Infrastructure;
 using Shared.Core;
 
-var builder = WebApplication.CreateBuilder(args);
 
 
-// Add services to the container.
-EngineContext.Create();
+public class Program
+{
+    // Método Main como punto de entrada
+    public static void Main(string[] args)
+    {
+        // Crea un builder para configurar la aplicación
+        var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+        // Añade servicios al contenedor
+        EngineContext.Create();
 
-builder.Services.AddControllers();
+        builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+        builder.Services.AddApplicationServices(builder.Configuration);
+        builder.Services.AddInfrastructureServices(builder.Configuration);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddApplicationServices(builder.Configuration);
-builder.Services.AddInfrastructureServices(builder.Configuration);
+        // Crea la aplicación
+        var app = builder.Build();
 
-var app = builder.Build();
+        EngineContext.Current.Configure(app.Services);
 
-EngineContext.Current.Configure(app.Services);
+        // Configura el pipeline HTTP
+        app.UseSwagger();
+        app.UseSwaggerUI();
+        app.UseHttpsRedirection();
+        app.UseAuthorization();
+        app.MapControllers();
 
-
-app.UseSwagger();
-app.UseSwaggerUI();
-
-// Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
+        // Ejecuta la aplicación
+        app.Run();
+    }
+}

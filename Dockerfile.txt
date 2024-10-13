@@ -1,0 +1,38 @@
+#Build de la aplicación usando una imagen del SDK de .NET
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+# Definimos el directorio de trabajo
+WORKDIR /app
+
+# Copiamos el archivo de solución (.sln) y los archivos .csproj de cada capa
+COPY *.sln ./
+COPY ./Shared/*.csproj ./Shared/
+COPY ./Domain/*.csproj ./Domain/
+COPY ./Application/*.csproj ./Application/
+COPY ./Infrastructure/*.csproj ./Infrastructure/
+COPY ./Api/*.csproj ./Api/
+
+# Restauramos las dependencias
+RUN dotnet restore
+
+# Copiamos todo el código fuente de la aplicación
+COPY . .
+
+# Publicamos la aplicación en modo Release
+RUN dotnet publish ./Api/Api.csproj -c Release -o /app/publish
+
+#  Imagen más ligera para correr la aplicación
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+
+# Establecemos el directorio de trabajo
+WORKDIR /app
+
+# Copiamos los archivos publicados desde la etapa de compilación
+COPY --from=build /app/publish .
+
+# Exponemos el puerto 8080 en el contenedor
+EXPOSE 8080
+
+# Definimos el comando para ejecutar la aplicación
+ENTRYPOINT ["dotnet", "Api.dll"]  # Asegúrate que "Api.dll" sea el nombre correcto
+
